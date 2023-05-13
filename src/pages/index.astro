@@ -10,12 +10,12 @@ import Card from '../components/Card.astro';
 			<Card
 				href="https://github.com/impeterk"
 				title="GitHub"
-				imgsrc="../../public/github-svg.svg"
+				imgsrc="/images/github-svg.svg"
 			/>
 			<Card
 				href="https://linkedin.com/in/impeterk"
 				title="LinkedIn"
-				imgsrc="../../public/linkedin-svg.svg"
+				imgsrc="/images/linkedin-svg.svg"
 			/>
 		</ul>
 	</main>
@@ -23,18 +23,24 @@ import Card from '../components/Card.astro';
 
 <style>
 	main {
-		margin: auto;
-		padding: 1.5rem;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		@media only screen and (max-width: 555px){
+			justify-content: space-evenly;	
+		}
 	}
 	h1 {
 		font-size: 8rem;
 		font-weight: 800;
-		margin: 4rem;
+		margin-bottom: 4rem;
 		@media only screen and (max-width: 1100px){
 		font-size: 4rem;	
+		}
+		@media only screen and (max-width: 555px){
+		font-size: 3rem;	
 		}
 	}
 	.uppercase {
@@ -53,7 +59,7 @@ import Card from '../components/Card.astro';
 		width: 100%;
 		display: grid;
 		grid-auto-flow: column;
-		grid-template-columns: repeat(2, 200px);
+		grid-template-columns: repeat(2, 1fr);
 		justify-content: space-evenly;
 		gap: 1rem;
 		padding: 0;
