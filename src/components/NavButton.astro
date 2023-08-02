@@ -1,0 +1,8 @@
+---
+const {link, text} = Astro.props
+---
+<a href={link} class="-skew-x-6 relative inline-block px-4 py-2 group">
+    <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-orange-600 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+    <span class="absolute inset-0 w-full h-full bg-gray-800  group-hover:bg-orange-600"></span>
+    <span class="relative text-orange-600 group-hover:text-gray-900">{text}</span>
+</a>

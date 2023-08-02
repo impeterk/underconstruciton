@@ -1,0 +1,13 @@
+---
+import NavButton from '../../components/NavButton.astro'
+---
+<header class="fixed top-0 flex justify-between w-full px-8 py-1 h-12 bg-gray-800">
+  <a href="/" ><img class="h-full aspect-square" src="/og_image.webp" /></a>
+  <nav class="flex items-flex-end ">
+    <ul class="flex gap-4 font-bold">
+      <li><NavButton link="/" text="Home" /></li>
+      <li><NavButton link="/#projects" text="Projects" /></li>
+      <li><NavButton link="/blog" text="Blog" /></li>
+    </ul>
+  </nav>
+</header>
