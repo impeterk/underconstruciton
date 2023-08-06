@@ -1,13 +1,54 @@
 ---
-import NavButton from '../../components/NavButton.astro'
+import ThemeSwticher from "../../components/ThemeSwticher.astro";
 ---
-<header class="fixed top-0 flex justify-between w-full px-8 py-1 h-12 bg-gray-800">
-  <a href="/" ><img class="h-full aspect-square" src="/og_image.webp" /></a>
-  <nav class="flex items-flex-end ">
-    <ul class="flex gap-4 font-bold">
-      <li><NavButton link="/" text="Home" /></li>
-      <li><NavButton link="/#projects" text="Projects" /></li>
-      <li><NavButton link="/blog" text="Blog" /></li>
+
+<header>
+  <nav>
+    <div class="nav-start">
+      <a href="#"><h2>Peter Kudelas</h2></a>
+    </div>
+    <div class="nav-center">
+  <ThemeSwticher />
+    </div>
+    <div class="nav-end">
+        <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Contact</a></li>
     </ul>
+    </div>
   </nav>
 </header>
+
+<style>
+    header, nav {
+        width: 100%;
+    }
+    header, nav, ul {
+        display: flex;
+    }
+    nav {
+        margin-inline: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li {
+        list-style: none;
+        padding: 0.25rem;
+    }
+    a {
+        color: var(--light);
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        text-decoration: underline;
+        color: var(--orange)
+    }
+
+    a:has(h2):hover, a:has(h2):active {
+    text-decoration: none;
+    }
+    
+    
+</style>

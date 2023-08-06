@@ -1,0 +1,29 @@
+<section>
+  <label>Theme switcher</label>
+  <button id="light">light</button>
+  <button id="dark">dark</button>
+</section>
+
+<script lang="js">
+  const body = document.querySelector("body");
+  const lightBtn = document.querySelector("#light")
+  const darkBtn = document.querySelector("#dark")
+  function handleLight() {
+      body.style.backgroundColor =  "var(--light)";
+      body.style.color = "var(--dark)";
+  }
+  function handleDark() {
+      body.style.backgroundColor =  "var(--dark)";
+      body.style.color = "var(--light)";
+    }
+lightBtn.addEventListener('click',() => handleLight())
+darkBtn.addEventListener('click', () => handleDark())
+
+</script>
+
+<style>
+  section {
+    display: flex;
+    align-items: center;
+  }
+</style>

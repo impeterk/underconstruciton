@@ -23,7 +23,28 @@ const url = Astro.url;
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://peterkudelas.eu/og_image.webp" />
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-800 items-center">
+  <body >
     <slot />
   </body>
 </html>
+
+<style is:global>
+  :root {
+  --dark: hsl(222, 47%, 11%);
+  --light: hsl(220, 14%, 96%);
+  --orange: #ea580c
+
+  }
+  html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "ui-sans-serif", "system-ui","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+body {
+  background-color: var(--dark);
+  color: var(--light);
+  width: 100%;
+}
+
+
+</style>
