@@ -1,19 +1,19 @@
 <section class="">
-  <label>Theme switcher</label>
-  <button id="light">light</button>
-  <button id="dark">dark</button>
+	<label>Theme switcher</label>
+	<button id="light">light</button>
+	<button id="dark">dark</button>
 </section>
 
 <script lang="js">
-const lightBtn = document.querySelector("#light");
-const darkBtn = document.querySelector("#dark");
-const html = document.documentElement;
-function handleLight() {
-  if (html.classList.length > 0) html.classList.remove("dark");
-}
-function handleDark() {
-  if (html.classList.length < 1) html.classList.add("dark");
-}
-lightBtn.addEventListener("click", () => handleLight());
-darkBtn.addEventListener("click", () => handleDark());
+	const lightBtn = document.querySelector('#light');
+	const darkBtn = document.querySelector('#dark');
+	const html = document.documentElement;
+	function handleLight() {
+		if (html.classList.length > 0) html.classList.remove('dark');
+	}
+	function handleDark() {
+		if (html.classList.length < 1) html.classList.add('dark');
+	}
+	lightBtn.addEventListener('click', () => handleLight());
+	darkBtn.addEventListener('click', () => handleDark());
 </script>

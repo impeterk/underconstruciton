@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../layouts/components/Header.astro";
 import Hero from "../layouts/components/Hero.astro";
+import Section from "../layouts/components/Section.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout
@@ -11,5 +13,11 @@ import Hero from "../layouts/components/Hero.astro";
   <Header />
   <main class="container">
     <Hero />
+    <Section title="Projects">
+      <Card title="Card 1" href="#" imgsrc="/images/github-svg.svg" />
+      <Card title="Card 1" href="#" imgsrc="/favicon.svg" />
+      <Card title="Card 1" href="#" imgsrc="/og_image.webp" />
+    </Section>
+    <Section title="Blog Posts" />
   </main>
 </Layout>
