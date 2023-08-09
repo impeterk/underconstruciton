@@ -24,7 +24,7 @@ export function Tag({ background, name }) {
     rose: 'bg-rose-400 text-rose-900'
   };
   return (
-    <a href="#" class={`rounded-md px-2 py-1 text-xs font-semibold ${colorToClassMap[background]} hover:opacity-75 transition-all`}>
+    <a href="#" class={`rounded-md p-2 md:py-1 text-xs font-semibold ${colorToClassMap[background]} hover:opacity-75 transition-all`}>
       {name}
     </a>
   );
