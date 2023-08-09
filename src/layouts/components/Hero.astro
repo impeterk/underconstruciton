@@ -1,28 +1,30 @@
 ---
-import GradientText from "../../components/GradientText.astro";
+import GradientText from '../../components/GradientText.astro';
 ---
 
 <section
-  class="max-w-6xl mx-auto md:h-[80vh] flex flex-col items-center md:flex-row"
+	class="mt-32 lg:mt-0 mx-4 xl:mx-auto max-w-6xl md:h-[80vh] flex flex-col items-center lg:flex-row"
 >
-  <div class="md:w-1/2">
-    <h2 class="text-3xl mt-4 font-bold">
-      Hi there, <br />I'm <span><GradientText content="Peter Kudelas" /></span>
-    </h2>
-    <p class="font-semibold my-4 leading-7 text-justify text-lg">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt
-      tenetur vitae, atque iure perferendis distinctio a sed maiores consectetur
-      recusandae, doloribus nulla veritatis! Alias nihil aperiam voluptatum
-      tempora expedita.
-    </p>
-  </div>
-  <div class="md:w-1/2">
-    <figure class="md:w-1/2 mx-auto md:mr-0">
-      <img
-        class="w-full aspect-square rounded-full ring ring-inset bg-gradient-to-b from-slate-50 to-slate-800 shadow-lg shadow-slate-900"
-        src="/favicon.svg"
-      />
-      <figcaption class="italic text-sm text-center mt-2">fesak</figcaption>
-    </figure>
-  </div>
+	<div class="lg:w-3/5 text-slate-400">
+		<h2 class="text-3xl mt-4 font-sans opacity-70">Hello World,</h2>
+		<h2 class="text-7xl font-sans font-black">
+			I'm <span><GradientText content="Peter Kudelas" /></span>
+		</h2>
+		<h2 class="text-5xl mt-4 font-mono font-extrabold opacity-70">
+			I {'<code/>'} web apps.
+		</h2>
+		<p class="font-semibold mt-8 leading-7 text-justify text-lg">
+			I am <span><GradientText content="front-end web developer" /></span> creating functional web
+			applications with latest technologies.
+		</p>
+	</div>
+	<div class="lg:w-1/2 mt-10 lg:mt-0">
+		<figure class="lg:w-1/2 mx-auto xl:mr-0">
+			<img
+				class="w-full aspect-square rounded-full ring ring-inset bg-gradient-to-b from-slate-50 to-slate-800 shadow-lg shadow-slate-900"
+				src="/favicon.svg"
+			/>
+			<figcaption class="italic text-sm text-center mt-2">fesak</figcaption>
+		</figure>
+	</div>
 </section>

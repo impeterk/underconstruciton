@@ -1,40 +1,40 @@
 ---
-import ThemeSwticher from "../../components/ThemeSwticher.astro";
+import ThemeSwticher from '../../components/ThemeSwticher.astro';
 ---
 
-<header class="container fixed top-0 bg-inherit max-w-7xl">
-  <nav class="m-4 sm:mx-0 flex justify-between items-center">
-    <div class="nav-start">
-      <a href="#"
-        ><h2
-          class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 hover:from-blue-500 hover:to-red-500 transition-colors duration-1000 ease-in-out"
-        >
-          Peter Kudelas
-        </h2></a
-      >
-    </div>
-    <div class="nav-center">
-      <!-- <ThemeSwticher /> -->
-    </div>
-    <ul class="flex">
-      <li class="px-2">
-        <a
-          class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
-          href="#">Blog</a
-        >
-      </li>
-      <li class="px-2">
-        <a
-          class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
-          href="#">Resume</a
-        >
-      </li>
-      <li class="px-2">
-        <a
-          class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
-          href="#">Contact</a
-        >
-      </li>
-    </ul>
-  </nav>
+<header class="container fixed top-0 bg-inherit max-w-7xl z-50">
+	<nav class="m-4 sm:mx-0 flex justify-between items-center">
+		<div class="ml-4 xl:ml-0">
+			<a href="#"
+				><h2
+					class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 hover:from-blue-500 hover:to-red-500 transition-colors duration-1000 ease-in-out"
+				>
+					Peter Kudelas
+				</h2></a
+			>
+		</div>
+		<div class="nav-center">
+			<!-- <ThemeSwticher /> -->
+		</div>
+		<ul class="flex mr-4 xl:mr-0">
+			<li class="px-2">
+				<a
+					class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
+					href="#">Blog</a
+				>
+			</li>
+			<li class="px-2">
+				<a
+					class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
+					href="#">Resume</a
+				>
+			</li>
+			<li class="px-2">
+				<a
+					class="text-lg font-medium hover:text-orange-500 hover:underline hover:underline-offset-2"
+					href="#contact">Contact</a
+				>
+			</li>
+		</ul>
+	</nav>
 </header>

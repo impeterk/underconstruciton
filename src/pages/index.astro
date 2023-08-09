@@ -1,23 +1,27 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../layouts/components/Header.astro";
-import Hero from "../layouts/components/Hero.astro";
-import Section from "../layouts/components/Section.astro";
-import Card from "../components/Card.astro";
+import Layout from '../layouts/Layout.astro';
+import Header from '../layouts/components/Header.astro';
+import Hero from '../layouts/components/Hero.astro';
+import Section from '../layouts/components/Section.astro';
+import Project from '../components/Project.astro';
+import ContactMe from '../components/ContactMe.astro';
 ---
 
 <Layout
-  title="Web under contruction..."
-  description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
+	title="Web under contruction..."
+	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 >
-  <Header />
-  <main class="container">
-    <Hero />
-    <Section title="Projects">
-      <Card title="Card 1" href="#" imgsrc="/images/github-svg.svg" />
-      <Card title="Card 1" href="#" imgsrc="/favicon.svg" />
-      <Card title="Card 1" href="#" imgsrc="/og_image.webp" />
-    </Section>
-    <Section title="Blog Posts" />
-  </main>
+	<Header />
+	<main class="container">
+		<Hero />
+		<Section title="Projects">
+			<Project title="Card 1" href="#" imgsrc="/images/github-svg.svg" />
+			<Project title="Card 1" href="#" imgsrc="/favicon.svg" />
+			<Project title="Card 1" href="#" imgsrc="/og_image.webp" />
+		</Section>
+		<!-- <Section title="Blog Posts" /> -->
+		<Section title="Contact Me">
+			<ContactMe />
+		</Section>
+	</main>
 </Layout>

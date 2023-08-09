@@ -1,11 +1,11 @@
 ---
-import GradientText from "../../components/GradientText.astro";
+import GradientText from '../../components/GradientText.astro';
 const { title } = Astro.props;
 ---
 
 <section class="max-w-5xl mx-auto">
-  <h2 class="text-4xl my-10 font-bold"><GradientText content={title} /></h2>
-  <div class="mb-20">
-    <slot />
-  </div>
+	<h2 class="ml-4 xl:ml-0 text-4xl my-10 font-bold"><GradientText content={title} /></h2>
+	<div class="mb-20">
+		<slot />
+	</div>
 </section>
