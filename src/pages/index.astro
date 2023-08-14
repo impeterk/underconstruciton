@@ -1,23 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../layouts/components/Header.astro';
 import Hero from '../layouts/components/Hero.astro';
 import Section from '../layouts/components/Section.astro';
 import Project from '../components/Project.astro';
 import ContactMe from '../components/ContactMe.astro';
+const allProjects = await Astro.glob('./projects/*.md');
 ---
 
 <Layout
 	title="Web under contruction..."
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 >
-	<Header />
 	<main class="container">
 		<Hero />
 		<Section title="Projects">
-			<Project title="Card 1" href="#" imgsrc="/images/github-svg.svg" />
-			<Project title="Card 1" href="#" imgsrc="/favicon.svg" />
-			<Project title="Card 1" href="#" imgsrc="/og_image.webp" />
+			{
+				allProjects.map((project) => (
+					<Project
+						title={project.frontmatter.title}
+						imgsrc={project.frontmatter.imgsrc}
+						href={project.url}
+						description={project.frontmatter.description}
+						tags={project.frontmatter.tags}
+					/>
+				))
+			}
 		</Section>
 		<!-- <Section title="Blog Posts" /> -->
 		<Section title="Contact Me">

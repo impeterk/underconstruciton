@@ -3,14 +3,16 @@ export interface Props {
 	title: string;
 	imgsrc: string;
 	href: string;
+	description: string;
+	tags: string[];
 }
 
-const { href, title, imgsrc } = Astro.props;
+const { href, title, imgsrc, description, tags } = Astro.props;
 import { Tag } from './Solid/Tag';
 ---
 
 <article
-	class="mx-2 lg:mx-4 xl:mx-auto min-h-40 max-h-fit my-5 p-6 flex flex-col md:flex-row bg-slate-800 rounded-lg"
+	class="mx-2 lg:mx-4 xl:mx-auto md:h-48 max-h-fit my-5 p-6 flex flex-col md:flex-row bg-slate-800 rounded-lg"
 >
 	<div class="shrink-0 md:w-1/6">
 		<a href={href} target="_blank">
@@ -23,22 +25,24 @@ import { Tag } from './Solid/Tag';
 	</div>
 	<div class="md:mx-6 flex flex-col">
 		<div class="flex flex-col items-center content-center md:items-start gap-x-1">
-			<a href={href} target="_blank">
-				<h3 class="text-2xl font-bold mt-8 md:mt-0">
-					{title}
-				</h3>
-			</a>
-			<div class="my-4 md:my-2">
-				<Tag name="fesak" background="sky" client:load />
-				<Tag name="javascript" background="amber" />
-				<Tag name="react" background="cyan" />
-				<Tag name="svelte" background="orange" />
-				<Tag name="blog" background="violet" />
+			<div class="flex flex-col md:flex-row items-center md:gap-4 md:mb-2">
+				<a href={href} target="_blank">
+					<h3
+						class="text-2xl font-bold mt-8 md:mt-0 hover:underline hover:underline-offset-4 transition-all"
+					>
+						{title}
+					</h3>
+				</a>
+				<div class="my-4 md:my-2 flex gap-2">
+					{tags.map((tag) => <Tag name={tag} background="sky" />)}
+					<!-- 	<Tag name="javascript" background="amber" /> -->
+					<!-- 	<Tag name="react" background="cyan" /> -->
+					<!-- 	<Tag name="svelte" background="orange" /> -->
+					<!-- 	<Tag name="blog" background="violet" /> -->
+				</div>
 			</div>
-			<p class="text-justify">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae accusamus natus possimus
-				nesciunt. Modi quaerat natus molestias nulla nobis reprehenderit porro perferendis veniam
-				impedit esse tenetur dicta, nihil harum? Dolore.
+			<p class="text-justify line-clamp-3">
+				{description}
 			</p>
 		</div>
 	</div>
