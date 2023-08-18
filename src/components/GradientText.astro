@@ -1,6 +1,8 @@
 ---
-const {content} = Astro.props
+const { content } = Astro.props;
 ---
-<fragment 
-class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600"
- >{content}</fragment>
+
+<fragment
+	class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 hover:from-red-600 hover:to-orange-500 transition-colors"
+	>{content}</fragment
+>

@@ -15,7 +15,7 @@ import { Tag } from './Solid/Tag';
 	class="mx-2 lg:mx-4 xl:mx-auto md:h-48 max-h-fit my-5 p-6 flex flex-col md:flex-row bg-slate-800 rounded-lg"
 >
 	<div class="shrink-0 md:w-1/6">
-		<a href={href} target="_blank">
+		<a href={href}>
 			<img
 				src={imgsrc}
 				class="h-40 md:h-full mx-auto aspect-square rounded-lg hover:opacity-75 hover:translate-y-1 transition"
@@ -25,15 +25,15 @@ import { Tag } from './Solid/Tag';
 	</div>
 	<div class="md:mx-6 flex flex-col">
 		<div class="flex flex-col items-center content-center md:items-start gap-x-1">
-			<div class="flex flex-col md:flex-row items-center md:gap-4 md:mb-2">
-				<a href={href} target="_blank">
+			<div class="flex flex-col md:flex-row items-center md:gap-4 md:mb-2 max-w-full">
+				<a href={href}>
 					<h3
 						class="text-2xl font-bold mt-8 md:mt-0 hover:underline hover:underline-offset-4 decoration-orange-500 transition-all"
 					>
 						{title}
 					</h3>
 				</a>
-				<div class="my-4 md:my-2 flex gap-2">
+				<div class="my-4 md:my-2 flex gap-2 flex-wrap max-lg:justify-center">
 					{tags.map((tag) => <Tag name={tag} />)}
 					<!-- 	<Tag name="javascript" background="amber" /> -->
 					<!-- 	<Tag name="react" background="cyan" /> -->

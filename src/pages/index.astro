@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../layouts/components/Hero.astro';
 import Section from '../layouts/components/Section.astro';
 import Project from '../components/Project.astro';
@@ -7,7 +7,7 @@ import ContactMe from '../components/ContactMe.astro';
 const allProjects = await Astro.glob('./projects/*.md');
 ---
 
-<Layout
+<BaseLayout
 	title="Web under contruction..."
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 >
@@ -31,4 +31,4 @@ const allProjects = await Astro.glob('./projects/*.md');
 			<ContactMe />
 		</Section>
 	</main>
-</Layout>
+</BaseLayout>
