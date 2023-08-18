@@ -1,0 +1,8 @@
+---
+const { tags } = Astro.props;
+import { Tag } from './Solid/Tag.jsx';
+---
+
+<div class="my-4 md:my-2 flex gap-2 flex-wrap max-lg:justify-center">
+	{tags.map((tag) => <Tag name={tag} />)}
+</div>

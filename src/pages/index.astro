@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../layouts/components/Hero.astro';
-import Section from '../layouts/components/Section.astro';
+import Hero from '../components/layout/Hero.astro';
+import Section from '../components/layout/Section.astro';
 import Project from '../components/Project.astro';
 import ContactMe from '../components/ContactMe.astro';
 const allProjects = await Astro.glob('./projects/*.md');
@@ -11,24 +11,22 @@ const allProjects = await Astro.glob('./projects/*.md');
 	title="Web under contruction..."
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 >
-	<main class="container">
-		<Hero />
-		<Section title="Projects">
-			{
-				allProjects.map((project) => (
-					<Project
-						title={project.frontmatter.title}
-						imgsrc={project.frontmatter.imgsrc}
-						href={project.url}
-						description={project.frontmatter.description}
-						tags={project.frontmatter.tags}
-					/>
-				))
-			}
-		</Section>
-		<!-- <Section title="Blog Posts" /> -->
-		<Section title="Contact Me">
-			<ContactMe />
-		</Section>
-	</main>
+	<Hero />
+	<Section title="Projects" id="projects">
+		{
+			allProjects.map((project) => (
+				<Project
+					title={project.frontmatter.title}
+					imgsrc={project.frontmatter.imgsrc}
+					href={project.url}
+					description={project.frontmatter.description}
+					tags={project.frontmatter.tags}
+				/>
+			))
+		}
+	</Section>
+	<!-- <Section title="Blog Posts" /> -->
+	<Section title="Contact Me">
+		<ContactMe />
+	</Section>
 </BaseLayout>
