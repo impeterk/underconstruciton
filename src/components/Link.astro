@@ -2,4 +2,8 @@
 const { href } = Astro.props;
 ---
 
-<a href={href} target="_blank" class="text-orange-500 underline hover:text-orange-700"><slot /></a>
+<a
+	href={href}
+	target="_blank"
+	class="text-accent underline underline-offset-4 hover:text-accent-focus"><slot /></a
+>

@@ -3,15 +3,17 @@ import GradientText from '../GradientText.astro';
 ---
 
 <section
-	class="mt-32 lg:mt-0 mx-4 xl:mx-auto max-w-6xl md:h-[80vh] flex flex-col items-center lg:flex-row"
+	class="mt-32 lg:mt-0 mx-4 xl:mx-auto max-w-6xl md:h-[80vh] flex flex-col items-center lg:flex-row text-base-content"
 >
-	<div class="lg:w-3/5 text-slate-400">
-		<h2 class="text-3xl mt-4 font-sans opacity-70">Hello World,</h2>
+	<div class="lg:w-3/5 group">
+		<h2 class="text-3xl mt-4 font-mono">Hello World,</h2>
 		<h2 class="text-7xl font-sans font-black">
-			I'm <span><GradientText content="Peter Kudelas" /></span>
+			I'm <span class="hover:bg-gradient-to-r hover:from-primaty hover:to-accent"
+				><GradientText content="Peter Kudelas" /></span
+			>
 		</h2>
-		<h2 class="text-5xl mt-4 font-mono font-extrabold opacity-70">
-			I {'<code/>'} web apps.
+		<h2 class="text-5xl mt-4 font-mono font-extrabold">
+			I <span class="font-mono">{'<code/>'}</span> web apps.
 		</h2>
 		<p class="font-semibold mt-8 leading-7 text-justify text-lg">
 			I am <span><GradientText content="front-end web developer" /></span> creating functional web
@@ -21,7 +23,7 @@ import GradientText from '../GradientText.astro';
 	<div class="lg:w-1/2 mt-10 lg:mt-0">
 		<figure class="lg:w-1/2 mx-auto xl:mr-0">
 			<img
-				class="w-full aspect-square rounded-full ring ring-inset bg-gradient-to-b from-slate-50 to-slate-800 shadow-lg shadow-slate-900"
+				class="w-full aspect-square rounded-full ring ring-accent hover:ring-primary ring-inset bg-gradient-to-t from-base-100 to-base-content shadow-lg shadow-base-300"
 				src="/favicon.svg"
 			/>
 			<figcaption class="italic text-sm text-center mt-2">fesak</figcaption>
