@@ -1,15 +1,14 @@
 ---
-import GradientText from '../components/GradientText.astro';
+import H1Title from '../components/H1Title.astro';
 import TagsList from '../components/TagsList.astro';
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-	<article class="mt-32 flex flex-col items-center max-w-5xl mx-2 lg:mx-4 xl:mx-auto">
-		<h1 class="text-6xl font-black font-sans text-left w-full my-2">
-			<GradientText content={frontmatter.title} />
-		</h1>
+	<article class="prose mt-32 flex flex-col items-center max-w-5xl mx-2 lg:mx-4 xl:mx-auto">
+		<H1Title title={frontmatter.title} />
+
 		<div class="article-head lg:flex w-full justify-between items-center">
 			<div class="author-time flex gap-4 ml-1 text-slate-500">
 				<p>{frontmatter.author}</p>
@@ -28,7 +27,7 @@ const { frontmatter } = Astro.props;
 			<figcaption class="text-right mt-4 text-sm font-mono">{frontmatter.imgCaption}</figcaption>
 		</figure>
 		<p class="indent-8 text-xl border-b border-b-slate-300 pb-10">{frontmatter.description}</p>
-		<div class="atricle-text indent-8 my-20">
+		<div class="article-text indent-8 my-20">
 			<slot />
 		</div>
 	</article>

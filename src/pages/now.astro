@@ -1,9 +1,72 @@
 ---
+import H1Title from '../components/H1Title.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Link from '../components/Link.astro';
 ---
 
-<BaseLayout title="now">
-	<section class="mt-40">
-		<p>Now</p>
-	</section>
+<BaseLayout title="Now">
+	<article class="mt-32 max-lg:mb-32 max-w-5xl mx-2 lg:mx-4 xl:mx-auto">
+		<H1Title title="Now" />
+		<div class="md:flex justify-between w-full">
+			<h3 class="text-2xl font-medium text-slate-400 my-2">What am I doing Now?</h3>
+			<h3 class="text-xl font-medium text-slate-500 my-2">Last update august 2023</h3>
+		</div>
+		<hr />
+		<div class="md:text-justify max-lg:mx-2 mt-20">
+			<div class="my-10">
+				<h2 class="text-4xl font-bold font-sans my-4">Henkel</h2>
+				<p class="indent-8">
+					Currently I am working as Web editor in Henkel. I have been wordking there for a little
+					more then a year now. I am also working od developer projects, which are outside of the
+					scope of my occupation, but are helpful in the long run.
+				</p>
+			</div>
+			<div class="my-10">
+				<h2 class="text-4xl font-bold font-sans my-4">University</h2>
+				<p class="indent-8">
+					In september I am starting my final year of university. So I thorouly working on my
+					thesis, which is kind of related to my working experience. It is about <i
+						>Software support in develpment of information systems</i
+					>.
+				</p>
+			</div>
+			<div class="my-10">
+				<h2 class="text-4xl font-bold font-sans my-4">Development</h2>
+				<p class="indent-8">
+					Apart from university I am learning on <Link href="https://codecademy.com">
+						<i>Codecademy</i>
+					</Link>. Right now, I am learning <Link
+						href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path"
+					>
+						Full-Stack Engineering
+					</Link>
+
+					 Course.
+				</p>
+			</div>
+			<div class="my-10 text-slate-300">
+				<h2 class="text-2xl font-bold font-sans my-4">What am I reading?</h2>
+				<p class="indent-8">
+					I like to read non-fiction literature. Currently I am reading <Link
+						href="https://www.google.com/books/edition/The_Courage_To_Be_Disliked/IggxDwAAQBAJ?hl=sk&gbpv=0"
+					>
+						<i> The courage to be disliked</i>
+					</Link>
+					 and <Link
+						href="https://www.google.com/books/edition/Mindset_Updated_Edition/ckoKDQAAQBAJ?hl=sk&gbpv=0"
+					>
+						<i>Mindset</i>
+					</Link>
+				</p>
+			</div>
+		</div>
+		<hr />
+		<p class="mt-4 text-xl text-slate-500">
+			This is a <Link href="https://nownownow.com/about">Now page</Link>, inspired by <Link
+				href="https://sivers.org"
+			>
+				Derek Sivers
+			</Link>. You should create one too!
+		</p>
+	</article>
 </BaseLayout>
