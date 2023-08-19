@@ -1,14 +1,26 @@
 ---
 import astro from '~/assets/favicon.svg';
 import solid from '~/assets/solid-js.svg';
+import daisyui from '~/assets/daisyui.svg';
 ---
 
-<footer class="w-full h-20 flex text-xl justify-center items-center text-slate-500 gap-2 mt-auto">
+<footer
+	class="w-full h-20 flex text-xl justify-center items-center text-base-content gap-2 mt-auto"
+>
 	<p>Created with</p>
-	<a href="https://astro.build" target="_blank"> <img src={astro.src} class="h-8" /></a>
-	<a href="https://tailwindcss.com" target="_blank">
-		<i class="nf nf-md-tailwind text-sky-500 text-4xl"></i>
-	</a>
+	<div class="tooltip" data-tip="Astro js">
+		<a href="https://astro.build" target="_blank"> <img src={astro.src} class="h-8" /></a>
+	</div>
+	<div class="tooltip" data-tip="Tailwind css">
+		<a href="https://tailwindcss.com" target="_blank">
+			<i class="nf nf-md-tailwind text-sky-500 text-4xl"></i>
+		</a>
+	</div>
+	<div class="tooltip" data-tip="Daisy UI">
+		<a href="https://daisyui.com" target="_blank"> <img src={daisyui.src} class="h-8" /></a>
+	</div>
 	<p>and</p>
-	<a href="https://solidjs.com" target="_blank"> <img src={solid.src} class="h-8" /></a>
+	<div class="tooltip" data-tip="Solid js">
+		<a href="https://solidjs.com" target="_blank"> <img src={solid.src} class="h-8" /></a>
+	</div>
 </footer>
