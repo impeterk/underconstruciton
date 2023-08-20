@@ -1,6 +1,7 @@
 ---
 import Hamburger from './Hamburger.astro';
 import NavLink from '../NavLink.astro';
+import { ThemeList } from '../Solid/ThemeList';
 ---
 
 <div class="md:hidden mr-4">
@@ -8,10 +9,13 @@ import NavLink from '../NavLink.astro';
 </div>
 <!-- <ul class={`md:flex mr-4 xl:mr-0 ${open ? 'block' : 'hidden'}`}> -->
 <ul
-	class="md:flex mr-4 xl:mr-0 gap-4 xl:gap-6 nav-links hidden bg-base-100 transition max-md:border-b-secondary max-md:border-b-4"
+	class="md:flex gap-4 xl:gap-6 nav-links hidden max-md:bg-base-100 transition max-md:border-b-secondary max-md:border-b-4"
 >
-	<NavLink href="/#projects" text="Projects" />
-	<NavLink href="/#contact" text="Contact Me" />
+	<div class="md:hidden mr-4 mt-4">
+		<ThemeList client:only="Solid-js" />
+	</div>
+	<NavLink href="/#projects" text="Projects" transition:name="projects" />
+	<NavLink href="/#contact" text="Contact Me" transition:name="contact" />
 	<NavLink href="/now" text="Now" />
 </ul>
 
@@ -20,6 +24,7 @@ import NavLink from '../NavLink.astro';
 		document.querySelector('.nav-links').classList.toggle('expanded');
 		document.querySelector('.nav-links').classList.toggle('hidden');
 	});
+	console.log(document.location.pathname);
 </script>
 <style>
 	.nav-links.expanded {

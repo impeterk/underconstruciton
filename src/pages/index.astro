@@ -12,7 +12,7 @@ const allProjects = await Astro.glob('./projects/*.md');
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 >
 	<Hero />
-	<Section title="Projects" id="projects">
+	<Section title="Projects" id="projects" transition:name='projects'>
 		{
 			allProjects.map((project) => (
 				<Project
@@ -30,3 +30,30 @@ const allProjects = await Astro.glob('./projects/*.md');
 		<ContactMe />
 	</Section>
 </BaseLayout>
+<!-- <script is:inline> -->
+<!-- let theme = (() => { -->
+<!--   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) { -->
+<!--     return localStorage.getItem('data-theme'); -->
+<!--   } -->
+<!--   if (window.matchMedia('(prefers-color-scheme: ligth)').matches) { -->
+<!--     return 'light'; -->
+<!--   } -->
+<!--   return 'dark'; -->
+<!-- })(); -->
+<!---->
+<!-- const setTheme = (newTheme) => { -->
+<!--   document.documentElement.setAttribute('data-theme', newTheme) -->
+<!-- } -->
+<!-- // window.localStorage.setItem('data-theme', theme) -->
+<!---->
+<!-- if (theme) { -->
+<!--   console.log(theme) -->
+<!--   setTheme(theme) -->
+<!---->
+<!-- } else { -->
+<!--   setTheme('dark') -->
+<!--   localStorage.setItem('data-theme', 'dark') -->
+<!-- } -->
+<!---->
+<!---->
+<!-- </script> -->
