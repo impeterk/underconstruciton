@@ -1,10 +1,13 @@
 ---
-const { href, text } = Astro.props;
+const { href, text, id, navActiveId } = Astro.props;
 ---
 
-<li class="">
+<li class="my-1">
 	<a
-		class="text-2xl font-semibold max-md:text-secondary text-base-content hover:text-primary-focus hover:underline underline-offset-8 max-md:text-4xl max-md:mr-4 max-md:leading-loose max-md:font-semibold"
-		href={href}>{text}</a
+		class={` font-semibold  p-4 ${
+			id == navActiveId ? ' text-accent bg-base-300' : 'text-base-content'
+		} hover:text-accent-content w-full`}
+		href={href}
+		id={id}>{text}</a
 	>
 </li>

@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/layout/Hero.astro';
 import Section from '../components/layout/Section.astro';
 import Project from '../components/Project.astro';
-import ContactMe from '../components/ContactMe.astro';
 const allProjects = await Astro.glob('./projects/*.md');
 ---
 
 <BaseLayout
 	title="Web under contruction..."
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
+	navActiveId="home"
 >
 	<Hero />
-	<Section title="Projects" id="projects" transition:name='projects'>
+	<Section title="Projects < />" id="projects" transition:name="projects">
 		{
 			allProjects.map((project) => (
 				<Project
@@ -25,35 +25,4 @@ const allProjects = await Astro.glob('./projects/*.md');
 			))
 		}
 	</Section>
-	<!-- <Section title="Blog Posts" /> -->
-	<Section title="Contact Me">
-		<ContactMe />
-	</Section>
 </BaseLayout>
-<!-- <script is:inline> -->
-<!-- let theme = (() => { -->
-<!--   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) { -->
-<!--     return localStorage.getItem('data-theme'); -->
-<!--   } -->
-<!--   if (window.matchMedia('(prefers-color-scheme: ligth)').matches) { -->
-<!--     return 'light'; -->
-<!--   } -->
-<!--   return 'dark'; -->
-<!-- })(); -->
-<!---->
-<!-- const setTheme = (newTheme) => { -->
-<!--   document.documentElement.setAttribute('data-theme', newTheme) -->
-<!-- } -->
-<!-- // window.localStorage.setItem('data-theme', theme) -->
-<!---->
-<!-- if (theme) { -->
-<!--   console.log(theme) -->
-<!--   setTheme(theme) -->
-<!---->
-<!-- } else { -->
-<!--   setTheme('dark') -->
-<!--   localStorage.setItem('data-theme', 'dark') -->
-<!-- } -->
-<!---->
-<!---->
-<!-- </script> -->

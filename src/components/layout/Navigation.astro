@@ -1,44 +1,10 @@
 ---
-import Hamburger from './Hamburger.astro';
+const { navActiveId } = Astro.props;
 import NavLink from '../NavLink.astro';
-import { ThemeList } from '../Solid/ThemeList';
 ---
 
-<div class="md:hidden mr-4">
-	<Hamburger />
-</div>
-<!-- <ul class={`md:flex mr-4 xl:mr-0 ${open ? 'block' : 'hidden'}`}> -->
-<ul
-	class="md:flex gap-4 xl:gap-6 nav-links hidden max-md:bg-base-100 transition max-md:border-b-secondary max-md:border-b-4"
->
-	<div class="md:hidden mr-4 mt-4">
-		<ThemeList client:only="Solid-js" />
-	</div>
-	<NavLink href="/#projects" text="Projects" transition:name="projects" />
-	<NavLink href="/#contact" text="Contact Me" transition:name="contact" />
-	<NavLink href="/now" text="Now" />
+<ul class="mt-10 mx-4 menu">
+	<NavLink href="/" text="Home" id="home" navActiveId={navActiveId} />
+	<NavLink href="/contact" text="Contact" id="contact" navActiveId={navActiveId} />
+	<NavLink href="/now" text="Now" id="now" navActiveId={navActiveId} />
 </ul>
-
-<script>
-	document.querySelector('.hamburger').addEventListener('click', () => {
-		document.querySelector('.nav-links').classList.toggle('expanded');
-		document.querySelector('.nav-links').classList.toggle('hidden');
-	});
-	console.log(document.location.pathname);
-</script>
-<style>
-	.nav-links.expanded {
-		position: fixed;
-		width: 100%;
-		text-align: right;
-		left: 0px;
-		top: 72px;
-	}
-	.nav-links.expanded a {
-		margin-right: 1rem;
-		font-size: 2rem;
-		font-weight: 600;
-		line-height: 1.75;
-		letter-spacing: 0.125rem;
-	}
-</style>

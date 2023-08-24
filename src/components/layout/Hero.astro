@@ -2,15 +2,12 @@
 import GradientText from '../GradientText.astro';
 ---
 
-<section
-	class="mt-32 lg:mt-0 mx-4 xl:mx-auto max-w-6xl md:h-[80vh] flex flex-col items-center lg:flex-row text-base-content"
->
-	<div class="lg:w-3/5 group">
-		<h2 class="text-3xl mt-4 font-mono">Hello World,</h2>
+<section class="hero h-screen md:h-[40vh]">
+	<div class="group max-lg:hero-content max-lg:text-center flex flex-col wrap">
+		<h2 class="text-3xl font-mono">Hello World,</h2>
 		<h2 class="text-7xl font-sans font-black">
-			I'm <span class="hover:bg-gradient-to-r hover:from-primaty hover:to-accent"
-				><GradientText content="Peter Kudelas" /></span
-			>
+			I'm
+			<GradientText content="Peter Kudelas" />
 		</h2>
 		<h2 class="text-5xl mt-4 font-mono font-extrabold">
 			I <span class="font-mono">{'<code/>'}</span> web apps.
@@ -19,14 +16,5 @@ import GradientText from '../GradientText.astro';
 			I am <span><GradientText content="front-end web developer" /></span> creating functional web
 			applications with latest web technologies.
 		</p>
-	</div>
-	<div class="lg:w-1/2 mt-10 lg:mt-0">
-		<figure class="lg:w-1/2 mx-auto xl:mr-0">
-			<img
-				class="w-full aspect-square rounded-full ring ring-accent hover:ring-primary ring-inset bg-gradient-to-t from-base-100 to-base-content shadow-lg shadow-base-300"
-				src="/favicon.svg"
-			/>
-			<figcaption class="italic text-sm text-center mt-2">fesak</figcaption>
-		</figure>
 	</div>
 </section>

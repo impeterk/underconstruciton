@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/layout/Section.astro';
+import ContactMe from '../components/ContactMe.astro';
+import GradientText from '../components/GradientText.astro';
+---
+
+<BaseLayout
+	title="Web under contruction..."
+	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
+	navActiveId="contact"
+>
+	<section class="lg:mt-[10vh]">
+		<div class="hero justify-start">
+			<h2 class="text-7xl font-sans font-black">
+				<GradientText content="Contact" />
+			</h2>
+		</div>
+		<ContactMe />
+	</section>
+</BaseLayout>

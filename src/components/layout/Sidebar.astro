@@ -1,0 +1,52 @@
+---
+interface ImageMetadata {
+	src: string;
+	width: number;
+	height: number;
+	format: string;
+}
+import Navigation from './Navigation.astro';
+const { navActiveId } = Astro.props;
+import { ThemeList } from '../Solid/ThemeList';
+import { Image, getImage } from 'astro:assets';
+const avatar = await getImage({
+	src: '../assets/cartoon-avatar.png',
+	format: 'avif',
+	height: 240,
+	width: 240
+});
+
+import imgSrc from 'src/assets/cartoon-avatar.png';
+---
+
+<nav class="drawer-side z-40" id="sidebar">
+	<label for="my-drawer" class="drawer-overlay"></label>
+
+	<aside class="bg-base-200 h-full w-60 xl:w-80 flex flex-col">
+		<div class="ml-8 py-4 hidden lg:block xl:hidden">
+			<ThemeList client:only="solid-js" />
+		</div>
+		<figure class="mx-auto pt-10">
+			<Image
+				src={avatar.src}
+				width={200}
+				height={400}
+				class="aspect-square rounded-full ring ring-accent bg-gradient-to-t from-base-100 to-base-content shadow-lg shadow-base-300"
+				alt="avatar"
+				format="avif"
+				decoding="async"
+				loading="lazy"
+			/>
+			<figcaption class="italic text-sm text-center mt-2"></figcaption>
+		</figure>
+		<Navigation navActiveId={navActiveId} />
+		<div class="mt-auto mb-4 flex justify-around text-base-content">
+			<a href="#" target="_blank"
+				><i class="nf nf-fa-github_square text-4xl hover:text-primary-focus transition"></i></a
+			>
+			<a href="#" target="_blank"
+				><i class="nf nf-fa-linkedin_square text-4xl hover:text-primary-focus transition"></i></a
+			>
+		</div>
+	</aside>
+</nav>

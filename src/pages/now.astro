@@ -1,12 +1,15 @@
 ---
-import H1Title from '../components/H1Title.astro';
+GradientText;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Link from '../components/Link.astro';
+import GradientText from '../components/GradientText.astro';
 ---
 
-<BaseLayout title="Now">
-	<article class="mt-32 max-lg:mb-32 max-w-5xl mx-2 lg:mx-4 xl:mx-auto prose">
-		<H1Title title="Now" />
+<BaseLayout title="Now" navActiveId="now">
+	<article class="prose max-w-3xl lg:mt-[10vh]">
+		<h2 class="text-7xl font-sans font-black">
+			<GradientText content="Now" />
+		</h2>
 		<div class="md:flex justify-between w-full">
 			<h3 class="text-base-content my-2">What am I doing Now?</h3>
 			<h3 class="text-base-content my-2">Last update august 2023</h3>
@@ -18,10 +21,10 @@ import Link from '../components/Link.astro';
 				Derek Sivers
 			</Link>. You should create one too!
 		</p>
-		<hr class="mt-2" />
+		<div class="divider"></div>
 		<div class="">
 			<div class="">
-				<h2 class="">Henkel</h2>
+				<h2 class="">Occupation</h2>
 				<p class="indent-8">
 					Currently I am working as Web editor in Henkel. I have been wordking there for a little
 					more then a year now. I am also working od developer projects, which are outside of the
@@ -67,6 +70,6 @@ import Link from '../components/Link.astro';
 				</p>
 			</div>
 		</div>
-		<hr />
+		<div class="divider"></div>
 	</article>
 </BaseLayout>

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: First Project
-imgsrc: "/images/projects/testing-hero.jpg"
+imgsrc: "src/assets/logo2.svg"
 imgCaption: "Welcome to hero image"
 imgAlt: "alt to image"
 author: "Peter Kudelas"

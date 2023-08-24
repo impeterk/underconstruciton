@@ -1,21 +1,23 @@
 ---
-import Navigation from './Navigation.astro';
-import Logo from './Logo.astro';
 import { ThemeList } from '../Solid/ThemeList';
+import Hamburger from './Hamburger.astro';
 ---
 
-<header class="container fixed top-0 bg-base-100 max-w-7xl z-50">
-	<nav class="m-1 lg:m-2 sm:mx-0 flex justify-between items-center">
-		<div class="ml-4 xl:ml-0">
-			<a href="/" class="flex items-center gap-6">
-				<Logo />
-			</a>
+<header
+	class="sticky lg:shadow-none lg:backdrop-blur-none lg:bg-opacity-0 top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm"
+>
+	<div class="navbar">
+		<div class="navbar-start m-4">
+			<div class="lg:hidden">
+				<Hamburger />
+			</div>
 		</div>
-		<div class="header-end flex items-center gap-4 xl:gap-6 mr-4 xl:mr-0">
-			<Navigation />
-			<div class="hidden md:block">
+		<div class="navbar-center"></div>
+
+		<div class="navbar-end m-4">
+			<div class="lg:hidden xl:block">
 				<ThemeList client:only="solid-js" transition:persist />
 			</div>
 		</div>
-	</nav>
+	</div>
 </header>

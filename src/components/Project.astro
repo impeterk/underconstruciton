@@ -1,24 +1,19 @@
 ---
-export interface Props {
-	title: string;
-	imgsrc: string;
-	href: string;
-	description: string;
-	tags: string[];
-}
-
 const { href, title, imgsrc, description, tags } = Astro.props;
 import TagsList from './TagsList.astro';
+import { Image } from 'astro:assets';
 ---
 
 <article
-	class="mx-2 lg:mx-4 xl:mx-auto lg:h-48 max-h-fit my-5 p-6 flex flex-col md:flex-row bg-base-200/80 rounded-xl text-base-content"
+	class="max-h-fit md:mx-3 p-6 flex flex-col md:flex-row bg-base-200 rounded-xl text-base-content hover:bg-base-300 transition project"
 >
 	<div class="shrink-0">
 		<a href={href}>
-			<img
+			<Image
 				src={imgsrc}
-				class="h-40 lg:h-full mx-auto aspect-video rounded-lg hover:opacity-75 hover:translate-y-1 transition"
+				width={750}
+				height={300}
+				class="mx-auto max-w-full md:max-w-[13rem] rounded-lg"
 				alt="decorational"
 			/>
 		</a>
@@ -41,3 +36,4 @@ import TagsList from './TagsList.astro';
 		</div>
 	</div>
 </article>
+<div class="divider"></div>
