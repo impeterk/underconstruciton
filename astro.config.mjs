@@ -10,5 +10,7 @@ export default defineConfig({
   experimental: {
     assets: true,
     viewTransitions: true
-  }
+  },
+  output: 'server',
+  adapter: vercel()
 });

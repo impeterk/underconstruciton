@@ -1,6 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GradientText from '../components/GradientText.astro';
+import { sendMail } from '..//server/mail.js';
+let formError = false;
+let success = false;
+if (Astro.request.method === 'POST') {
+	const data = await Astro.request.formData();
+	const name = data.get('name');
+	const email = data.get('email');
+	const message = data.get('message');
+	await sendMail({ name, email, message })
+		.then(() => {
+			success = true;
+		})
+		.catch((e) => {
+			formError = true;
+			console.log(e);
+		});
+}
 ---
 
 <BaseLayout
@@ -8,6 +25,29 @@ import GradientText from '../components/GradientText.astro';
 	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
 	navActiveId="contact"
 >
+	{
+		success && (
+			<div
+				id="success"
+				class="absolute animate-bounce animate max-w-[700px] alert bg-primary text-primary-content shadow-md shadow-base-200 "
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="stroke-current shrink-0 h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+					/>
+				</svg>
+				<span>You have 3 unread messages. Tap here to see.</span>
+			</div>
+		)
+	}
 	<section class="lg:mt-[10vh]">
 		<div class="hero justify-start">
 			<h2 class="text-7xl font-sans font-black">
@@ -20,8 +60,44 @@ import GradientText from '../components/GradientText.astro';
 				to geek out about code, drop me a line using the form below.
 			</h3>
 		</div>
+		{
+			formError && (
+				<div
+					id="error"
+					class="absolute top-10 animate-bounce animate max-w-[700px] alert alert-error shadow-md shadow-base-200"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="stroke-current shrink-0 h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+						/>
+					</svg>
+					<span>
+						Upsy Daisy! There was an Error. Please try this action again. <br />I believe it will
+						work this time.
+					</span>
+				</div>
+			)
+		}
 		<div class="max-w-xl mx-auto">
-			<form>
+			<form method="POST">
+				<div class="mb-4">
+					<label for="name" class="block text-lg font-medium text-accent">Name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="mt-1 px-3 py-2 w-full textarea textarea-accent"
+						required
+					/>
+				</div>
 				<div class="mb-4">
 					<label for="email" class="block text-lg font-medium text-accent">Email</label>
 					<input
@@ -29,6 +105,7 @@ import GradientText from '../components/GradientText.astro';
 						id="email"
 						name="email"
 						class="mt-1 px-3 py-2 w-full textarea textarea-accent"
+						required
 					/>
 				</div>
 				<div class="mb-4">
@@ -37,11 +114,14 @@ import GradientText from '../components/GradientText.astro';
 						id="message"
 						name="message"
 						rows="10"
-						class="mt-1 px-3 py-2 w-full textarea textarea-accent"></textarea>
+						class="mt-1 px-3 py-2 w-full textarea textarea-accent"
+						required></textarea>
 				</div>
 				<div class="w-full flex justify-end">
-					<button type="submit" class="w-full md:w-3/5 btn-accent py-2 font-semibold text-2xl btn"
-						>Send</button
+					<button
+						id="submit"
+						type="submit"
+						class="w-full md:w-3/5 btn-accent py-2 font-semibold text-2xl btn">Send</button
 					>
 				</div>
 			</form>
@@ -49,3 +129,18 @@ import GradientText from '../components/GradientText.astro';
 	</section>
 	<div class="divider"></div>
 </BaseLayout>
+
+<script>
+	let success = document.querySelector('#success');
+	let error = document.querySelector('#error');
+	if (success) {
+		setTimeout(() => {
+			success.remove();
+		}, 2000);
+	}
+	if (error) {
+		setTimeout(() => {
+			error.remove();
+		}, 5000);
+	}
+</script>
