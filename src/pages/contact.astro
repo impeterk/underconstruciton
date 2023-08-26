@@ -1,7 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/layout/Section.astro';
-import ContactMe from '../components/ContactMe.astro';
 import GradientText from '../components/GradientText.astro';
 ---
 
@@ -16,7 +14,38 @@ import GradientText from '../components/GradientText.astro';
 				<GradientText content="Contact" />
 			</h2>
 		</div>
-		<ContactMe />
+		<div class="my-12">
+			<h3 class="text-xl text-base-content font-semibold">
+				Hey there! If you're interested in collaborating, discussing a tech challenge, or just want
+				to geek out about code, drop me a line using the form below.
+			</h3>
+		</div>
+		<div class="max-w-xl mx-auto">
+			<form>
+				<div class="mb-4">
+					<label for="email" class="block text-lg font-medium text-accent">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="mt-1 px-3 py-2 w-full textarea textarea-accent"
+					/>
+				</div>
+				<div class="mb-4">
+					<label for="message" class="block text-lg font-medium text-accent">Message</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="10"
+						class="mt-1 px-3 py-2 w-full textarea textarea-accent"></textarea>
+				</div>
+				<div class="w-full flex justify-end">
+					<button type="submit" class="w-full md:w-3/5 btn-accent py-2 font-semibold text-2xl btn"
+						>Send</button
+					>
+				</div>
+			</form>
+		</div>
 	</section>
 	<div class="divider"></div>
 </BaseLayout>
