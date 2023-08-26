@@ -1,27 +1,30 @@
 ---
-const { href, title, imgsrc, description, tags } = Astro.props;
+const { href, title, imgsrc, description, tags, imageAlt } = Astro.props;
 import TagsList from './TagsList.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
+
+const betterImage = await getImage({ src: imgsrc, height: 720, width: 480 });
 ---
 
 <article
-	class="max-h-fit md:mx-3 p-6 flex flex-col md:flex-row bg-base-200 rounded-xl text-base-content hover:bg-base-300 transition project"
+	class="md:mx-3 p-6 flex flex-col md:flex-row bg-base-200 rounded-xl text-base-content hover:bg-base-300 transition project"
 >
-	<div class="shrink-0">
-		<a href={href}>
+	<div class="shrink-0 my-auto">
+		<a href={href} target="_blank">
 			<Image
 				src={imgsrc}
-				width={750}
-				height={300}
-				class="mx-auto max-w-full md:max-w-[13rem] rounded-lg"
-				alt="decorational"
+				width={720}
+				height={480}
+				class="mx-auto aspect-video max-w-full md:max-w-[15rem] rounded-lg"
+				alt={imageAlt}
+				format="avif"
 			/>
 		</a>
 	</div>
 	<div class="md:mx-6 flex flex-col">
 		<div class="flex flex-col items-center content-center lg:items-start gap-x-1">
 			<div class="flex flex-col lg:flex-row items-center gap-2 md:gap-4 md:mb-2 max-w-full">
-				<a href={href}>
+				<a href={href} target="_blank">
 					<h3
 						class="text-2xl font-bold mt-8 md:mt-0 hover:underline underline-offset-8 decoration-primary transition-all"
 					>
@@ -30,7 +33,7 @@ import { Image } from 'astro:assets';
 				</a>
 				<TagsList tags={tags} />
 			</div>
-			<p class="text-justify line-clamp-3">
+			<p class="text-lg font-medium">
 				{description}
 			</p>
 		</div>

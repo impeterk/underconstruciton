@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/layout/Hero.astro';
 import Section from '../components/layout/Section.astro';
 import Project from '../components/Project.astro';
-const allProjects = await Astro.glob('./projects/*.md');
+import { getCollection } from 'astro:content';
+const allProjects = await getCollection('project');
 ---
 
 <BaseLayout
-	title="Web under contruction..."
-	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
+	title="Crafting Seamless Digital Experiences"
+	description="Welcome to my portfolio! I'm a passionate front-end web developer specializing in React, Vue, Svelte, and Astro. Explore a collection of my projects that embody intuitive user interfaces, efficient functionality, and elegant design."
 	navActiveId="home"
 >
 	<Hero />
@@ -16,11 +17,12 @@ const allProjects = await Astro.glob('./projects/*.md');
 		{
 			allProjects.map((project) => (
 				<Project
-					title={project.frontmatter.title}
-					imgsrc={project.frontmatter.imgsrc}
-					href={project.url}
-					description={project.frontmatter.description}
-					tags={project.frontmatter.tags}
+					title={project.data.title}
+					imgsrc={project.data.image}
+					description={project.data.description}
+					tags={project.data.tags}
+					href={project.data.linkToProject}
+					imageAlt={project.data.imageAlt}
 				/>
 			))
 		}

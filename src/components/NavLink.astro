@@ -6,7 +6,7 @@ const { href, text, id, navActiveId } = Astro.props;
 	<a
 		class={` font-semibold  p-4 ${
 			id == navActiveId ? ' text-accent bg-base-300' : 'text-base-content'
-		} hover:text-accent-content w-full`}
+		} hover:text-accent w-full`}
 		href={href}
 		id={id}>{text}</a
 	>

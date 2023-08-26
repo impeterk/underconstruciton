@@ -1,22 +1,15 @@
 ---
-interface ImageMetadata {
-	src: string;
-	width: number;
-	height: number;
-	format: string;
-}
+// interface ImageMetadata {
+// 	src: string;
+// 	width: number;
+// 	height: number;
+// 	format: string;
+// }
 import Navigation from './Navigation.astro';
 const { navActiveId } = Astro.props;
 import { ThemeList } from '../Solid/ThemeList';
-import { Image, getImage } from 'astro:assets';
-const avatar = await getImage({
-	src: '../assets/cartoon-avatar.png',
-	format: 'avif',
-	height: 240,
-	width: 240
-});
-
-import imgSrc from 'src/assets/cartoon-avatar.png';
+import { Image } from 'astro:assets';
+import avatar from '../../assets/cartoon-avatar.png';
 ---
 
 <nav class="drawer-side z-40" id="sidebar">
@@ -28,14 +21,13 @@ import imgSrc from 'src/assets/cartoon-avatar.png';
 		</div>
 		<figure class="mx-auto pt-10">
 			<Image
-				src={avatar.src}
+				src={avatar}
 				width={200}
-				height={400}
-				class="aspect-square rounded-full ring ring-accent bg-gradient-to-t from-base-100 to-base-content shadow-lg shadow-base-300"
+				height={240}
+				class="aspect-square rounded-full ring ring-accent/50 shadow-lg shadow-accent"
 				alt="avatar"
 				format="avif"
 				decoding="async"
-				loading="lazy"
 			/>
 			<figcaption class="italic text-sm text-center mt-2"></figcaption>
 		</figure>

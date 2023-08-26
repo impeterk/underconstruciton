@@ -1,7 +1,8 @@
 ---
-import astro from '~/assets/favicon.svg';
+import astro from '~/assets/astro.svg';
 import solid from '~/assets/solid-js.svg';
 import daisyui from '~/assets/daisyui.svg';
+import tailwind from '~/assets/tailwind.svg';
 ---
 
 <footer
@@ -9,18 +10,24 @@ import daisyui from '~/assets/daisyui.svg';
 >
 	<p>Created with</p>
 	<div class="tooltip" data-tip="Astro js">
-		<a href="https://astro.build" target="_blank"> <img src={astro.src} class="h-9" /></a>
+		<a href="https://astro.build" target="_blank">
+			<img src={astro.src} width="36" height="36" alt="astro logo" /></a
+		>
 	</div>
 	<div class="tooltip" data-tip="Tailwind css">
 		<a href="https://tailwindcss.com" target="_blank">
-			<i class="nf nf-md-tailwind text-sky-500 text-4xl"></i>
-		</a>
+			<img src={tailwind.src} width="36" height="36" alt="tailwind css logo" /></a
+		>
 	</div>
 	<div class="tooltip" data-tip="Daisy UI">
-		<a href="https://daisyui.com" target="_blank"> <img src={daisyui.src} class="h-8" /></a>
+		<a href="https://daisyui.com" target="_blank">
+			<img src={daisyui.src} width="34" height="34" alt="daisyui logo" /></a
+		>
 	</div>
 	<p>and</p>
 	<div class="tooltip" data-tip="Solid js">
-		<a href="https://solidjs.com" target="_blank"> <img src={solid.src} class="h-8" /></a>
+		<a href="https://solidjs.com" target="_blank">
+			<img src={solid.src} width="34" height="34" alt="solid js logo" /></a
+		>
 	</div>
 </footer>
