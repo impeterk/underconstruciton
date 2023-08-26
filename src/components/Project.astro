@@ -1,13 +1,11 @@
 ---
 const { href, title, imgsrc, description, tags, imageAlt } = Astro.props;
 import TagsList from './TagsList.astro';
-import { Image, getImage } from 'astro:assets';
-
-const betterImage = await getImage({ src: imgsrc, height: 720, width: 480 });
+import { Image } from 'astro:assets';
 ---
 
 <article
-	class="md:mx-3 p-6 flex flex-col md:flex-row bg-base-200 rounded-xl text-base-content hover:bg-base-300 transition project"
+	class="md:mx-3 p-3 flex flex-col md:flex-row rounded-xl text-base-content hover:shadow-xl hover:shadow-base-300 hover:-translate-y-1 transition project"
 >
 	<div class="shrink-0 my-auto">
 		<a href={href} target="_blank">
