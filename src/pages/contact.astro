@@ -21,8 +21,8 @@ if (Astro.request.method === 'POST') {
 ---
 
 <BaseLayout
-	title="Web under contruction..."
-	description="Welcome to Peter Kudeláš personal website. Web is currently under construction..."
+	title="Contact Me"
+	description="Connect with a skilled web developer through my contact page. Let's discuss your project ideas, web solutions, or collaboration opportunities. Reach out now to turn your digital visions into reality."
 	navActiveId="contact"
 >
 	{
@@ -44,10 +44,36 @@ if (Astro.request.method === 'POST') {
 						d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
 					/>
 				</svg>
-				<span>You have 3 unread messages. Tap here to see.</span>
+				<span>Thank you for reaching out. I will answer back soon</span>
+			</div>
+		)
+	}{
+		formError && (
+			<div
+				id="error"
+				class="absolute animate-bounce animate max-w-[700px] alert alert-error shadow-md shadow-base-200"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="stroke-current shrink-0 h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+					/>
+				</svg>
+				<span>
+					Upsy Daisy! There was an Error. Please try this action again. <br />I believe it will work
+					this time.
+				</span>
 			</div>
 		)
 	}
+
 	<section class="lg:mt-[10vh]">
 		<div class="hero justify-start">
 			<h2 class="text-7xl font-sans font-black">
@@ -60,32 +86,6 @@ if (Astro.request.method === 'POST') {
 				to geek out about code, drop me a line using the form below.
 			</h3>
 		</div>
-		{
-			formError && (
-				<div
-					id="error"
-					class="absolute top-10 animate-bounce animate max-w-[700px] alert alert-error shadow-md shadow-base-200"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="stroke-current shrink-0 h-6 w-6"
-						fill="none"
-						viewBox="0 0 24 24"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-						/>
-					</svg>
-					<span>
-						Upsy Daisy! There was an Error. Please try this action again. <br />I believe it will
-						work this time.
-					</span>
-				</div>
-			)
-		}
 		<div class="max-w-xl mx-auto">
 			<form method="POST">
 				<div class="mb-4">
