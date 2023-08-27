@@ -15,7 +15,7 @@ if (Astro.request.method === 'POST') {
 		})
 		.catch((e) => {
 			formError = true;
-			console.log(e);
+			throw new Error(e);
 		});
 }
 ---
@@ -29,7 +29,7 @@ if (Astro.request.method === 'POST') {
 		success && (
 			<div
 				id="success"
-				class="absolute animate-bounce animate max-w-[700px] alert bg-primary text-primary-content shadow-md shadow-base-200 "
+				class="absolute animate-bounce animate max-md:w-fit max-md:mr-6 md:max-w-[700px] alert bg-primary text-primary-content shadow-md shadow-base-200 "
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ if (Astro.request.method === 'POST') {
 		formError && (
 			<div
 				id="error"
-				class="absolute animate-bounce animate max-w-[700px] alert alert-error shadow-md shadow-base-200"
+				class="absolute animate-bounce animate max-md:w-fit max-md:mr-6 max-w-[700px] alert alert-error shadow-md shadow-base-200"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +67,8 @@ if (Astro.request.method === 'POST') {
 					/>
 				</svg>
 				<span>
-					Upsy Daisy! There was an Error. Please try this action again. <br />I believe it will work
-					this time.
+					<strong>Upsy Daisy!</strong> There was an Error. Please try this action again. <br />I
+					believe it will work this time.
 				</span>
 			</div>
 		)
@@ -141,6 +141,6 @@ if (Astro.request.method === 'POST') {
 	if (error) {
 		setTimeout(() => {
 			error.remove();
-		}, 5000);
+		}, 3500);
 	}
 </script>
